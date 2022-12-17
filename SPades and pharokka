@@ -1,0 +1,42 @@
+##Phage Genome Assembly##
+
+1. qsub -I
+
+
+#For Two fasta Q file using this commends only
+
+2.
+/Users/zougeng/Documents/Software/SPAdes-3.14.1-Darwin/bin/spades.py --pe1-1 my_file_1.fq --pe1-2 full_path_with my_file_2.fq --cov-cutoff 8000 -t 16 --isolate -o LP3_trimmed_isolate 
+
+Example:
+
+
+#For The single fasta Q file using this commends only
+
+
+/Users/zougeng/Documents/Software/SPAdes-3.14.1-Darwin/bin/spades.py --s my_file.fq  --cov-cutoff 5000 -t 16 --isolate -o my output_folder and file_name 
+
+
+
+#Here commend list is  
+--cov-cutoff 5000 should be more then 5000 like 6000, 8000, 10000
+
+
+##For Annotation##
+
+1. How to  actuive pharokka environment
+
+source ./miniconda3/bin/activate pharokka
+
+
+2. pharokka.py -i <phage fasta file> -o <output directory> -d <path/to/database_dir> -t <threads>
+
+Example::
+(pharokka) [runzeli@login1 ~]$ pharokka.py -i ./israfil/LPAP1/LPAP_trimmed_isolate/scaffolds.fasta -o ~/israfil/annotation -d /home/runzeli/miniconda3/envs/pharokka/databases -t 16
+
+
+*** -i = input file must be .fasta formate
+*** - o = output
+*** -d = database of this softwerter
+*** -t = 16
+**** make the file name is simple and try to put this ./israfil/******
